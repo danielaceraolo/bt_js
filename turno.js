@@ -1,4 +1,3 @@
-
 import {
     ScheduleManager
 } from './src/module/ScheduleManager.js'
@@ -16,10 +15,12 @@ const message = document.getElementById("message");
 
 const turnoDia = document.getElementById("turnoDia")
 
-const arrayTurnos = listaTurnos.getAllSchedules()
-const arrayDias = arrayTurnos.map((schedule) => schedule.day)
+//const arrayTurnos = listaTurnos.getAllSchedules()
+//const arrayDias = arrayTurnos.map((schedule) => schedule.day)
 
-const fragment = document.createDocumentFragment()
+//const fragment = document.createDocumentFragment()
+
+const empty = document.getElementById ("emptyOption")
 
 
 /* ------------------ ------------------ */
@@ -28,19 +29,21 @@ const chosen = {name: "", email: "", turnoDia: "", message: ""}
 
 const myTurns = JSON.parse(localStorage.getItem('myTurns')) || []
 
-name.addEventListener("input",handleInput)
-email.addEventListener("input",handleInput)
-message.addEventListener("input",handleInput)
+name.addEventListener("input", handleInput)
+email.addEventListener("input", handleInput)
+message.addEventListener("input", handleInput)
 
 
 turnoDia.addEventListener('change', handleSelect)
-submit.addEventListener("click",handleClick)
+submit.addEventListener("click", handleClick)
 
 
 
-function handleSelect(e){
-    const {id} = e.target
-    switch(id){
+function handleSelect(e) {
+    const {
+        id
+    } = e.target
+    switch (id) {
         case "turnoDia":
             chosen.turnoDia = verifyOption(e)
             break
@@ -51,31 +54,35 @@ function handleSelect(e){
     e.preventDefault()
 }*/
 
-function handleInput(e){
-    const {id, value} = e.target
-    switch (id){
+function handleInput(e) {
+    const {
+        id,
+        value
+    } = e.target
+    switch (id) {
         case "name":
             chosen.name = value
-        break
+            break
         case "email":
             chosen.email = value
         case "message":
             chosen.message = value
-        break
+            break
     }
 }
 
-function verifyOption(e){
-    
+function verifyOption(e) {
+
     let chosenOption = ""
 
-    for ( const option of e.target.childNodes){
-        if (option.tagName == "option"){
-            if (option.selected == true){
+    for (const option of e.target.childNodes) {
+        if (option.tagName == "OPTION") {
+            if (option.selected == true) {
                 chosenOption = option.value
             }
         }
-    }return chosenOption
+    }
+    return chosenOption
 }
 
 /* ------------------ SELECCIONAR DÍA DEL TURNO ------------------ */
@@ -90,33 +97,46 @@ function verifyOption(e){
 turnoDia.appendChild(fragment)*/
 
 
-const takenTurn= (turnoDia, chosen) => {
-    
+const takenTurn = (turnoDia, chosen) => {
+
     const takenTurn = turnoDia.some(elem => {
         return (
             elem.chosen == chosen.turnoDia
-        )})
-        return takenTurn
+        )
+    })
+    return takenTurn
 }
 
-function handleClick(e){
+function handleClick(e) {
     e.preventDefault()
-    if(!takenTurn(myTurns, chosen)) {
+    if (!takenTurn(myTurns, chosen)) {
+
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Turno Reservado',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
         p.innerHTML = `<p>¡Has reservado con éxito tu turno!</p>`
         name.value = ""
-        message.value = ""
+        email.value = ""
         turnoDia.value = ""
+        message.value = ""
 
 
-        const newTurn = {...chosen}
+        const newTurn = {
+            ...chosen
+        }
         myTurns.push(newTurn)
         localStorage.setItem('myTurns', JSON.stringify(myTurns));
 
 
 
-    } else {
+    } /*else {
         muestra.innerHTML = 'No es posible ese día.'
-    }
+    }*/
 }
 
 console.log(chosen)

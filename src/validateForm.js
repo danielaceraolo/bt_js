@@ -1,3 +1,4 @@
+
 const form = document.querySelector("form[name='contact-form']");
 const nameInput = document.querySelector("input[name='name']");
 const emailInput = document.querySelector("input[name='email']");
@@ -24,7 +25,6 @@ let shouldValidate = false;
 let isFormValid = false;
 
 const validateInputs = () => {
-    console.log("enviar");
     if (!shouldValidate) return;
 
     isFormValid = true;
