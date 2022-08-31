@@ -1,52 +1,122 @@
-/* ------------------ LIBRERÍA ------------------ */
 
-import { ScheduleManager } from "./module/ScheduleManager.js";
+import {
+    ScheduleManager
+} from './src/module/ScheduleManager.js'
 
-export const listaTurnos = new ScheduleManager("lista1",new Date(),5,3, "14:00", "17:00")
+export const listaTurnos = new ScheduleManager("lista1", new Date(), 5, 1, "14:00", "17:00")
 
 /* ------------------ CONST ------------------ */
 
-const turnosDias = document.getElementById("turnosDias")
+const form = document.getElementById('form')
+const submit = document.getElementById('button')
+
+const name = document.getElementById("name");
+const email = document.getElementById("email");
+const message = document.getElementById("message");
+
+const turnoDia = document.getElementById("turnoDia")
 
 const arrayTurnos = listaTurnos.getAllSchedules()
-const arrayDias = arrayTurnos.map((schedule)=>schedule.day)
-const reservas = JSON.parse(localStorage.getItem('reservas')) || []
+const arrayDias = arrayTurnos.map((schedule) => schedule.day)
 
 const fragment = document.createDocumentFragment()
 
+
+/* ------------------ ------------------ */
+
+const chosen = {name: "", email: "", turnoDia: "", message: ""}
+
+const myTurns = JSON.parse(localStorage.getItem('myTurns')) || []
+
+name.addEventListener("input",handleInput)
+email.addEventListener("input",handleInput)
+message.addEventListener("input",handleInput)
+
+
+turnoDia.addEventListener('change', handleSelect)
+submit.addEventListener("click",handleClick)
+
+
+
+function handleSelect(e){
+    const {id} = e.target
+    switch(id){
+        case "turnoDia":
+            chosen.turnoDia = verifyOption(e)
+            break
+    }
+}
+
+/*function handleClick(e){
+    e.preventDefault()
+}*/
+
+function handleInput(e){
+    const {id, value} = e.target
+    switch (id){
+        case "name":
+            chosen.name = value
+        break
+        case "email":
+            chosen.email = value
+        case "message":
+            chosen.message = value
+        break
+    }
+}
+
+function verifyOption(e){
+    
+    let chosenOption = ""
+
+    for ( const option of e.target.childNodes){
+        if (option.tagName == "option"){
+            if (option.selected == true){
+                chosenOption = option.value
+            }
+        }
+    }return chosenOption
+}
+
 /* ------------------ SELECCIONAR DÍA DEL TURNO ------------------ */
 
-for (const day of arrayDias){
-    const selectItem = document.createElement('OPTION')
-    selectItem.setAttribute('value', day)
-    selectItem.textContent = day
-    fragment.appendChild(selectItem)
+/*for (const day of arrayDias) {
+    const selectDay = document.createElement('option')
+    selectDay.setAttribute('value', day)
+    selectDay.textContent = day
+    fragment.appendChild(selectDay)
 }
 
-turnosDias.appendChild(fragment)
+turnoDia.appendChild(fragment)*/
 
-reservas.push()
-    localStorage.setItem('reservas', JSON.stringify(reservas));
 
-/* ------------------ HORAS ------------------ 
-
-const turnosHora = document.getElementById("turnosHora")
-
-const arrayHoras = arrayTurnos.find((schedule)=>{ return schedule.day });
-const arrayDisponibles = arrayHoras.filter((hour)=>{ return hour.available == true })
-
------------------- SELECCIONAR HORA DEL TURNO ------------------ 
-
-for (const hour of arrayDisponibles){
-    const selectItem = document.createElement('OPTION')
-    selectItem.setAttribute('value', hour)
-    fragment.appendChild(selectItem)
+const takenTurn= (turnoDia, chosen) => {
+    
+    const takenTurn = turnoDia.some(elem => {
+        return (
+            elem.chosen == chosen.turnoDia
+        )})
+        return takenTurn
 }
 
- ----------------------------------- */
+function handleClick(e){
+    e.preventDefault()
+    if(!takenTurn(myTurns, chosen)) {
+        p.innerHTML = `<p>¡Has reservado con éxito tu turno!</p>`
+        name.value = ""
+        message.value = ""
+        turnoDia.value = ""
+
+
+        const newTurn = {...chosen}
+        myTurns.push(newTurn)
+        localStorage.setItem('myTurns', JSON.stringify(myTurns));
 
 
 
+    } else {
+        muestra.innerHTML = 'No es posible ese día.'
+    }
+}
 
-
-
+console.log(chosen)
