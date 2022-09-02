@@ -1,8 +1,11 @@
 
+
+
 const form = document.querySelector("form[name='contact-form']");
 const nameInput = document.querySelector("input[name='name']");
 const emailInput = document.querySelector("input[name='email']");
 const messageInput = document.querySelector("textarea[name='message']");
+const turnoDia = document.getElementById("turnoDia")
 
 nameInput.isValid = () => !!nameInput.value;
 emailInput.isValid = () => isValidEmail(emailInput.value);
@@ -44,7 +47,13 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     shouldValidate = true;
     validateInputs();
-    if (isFormValid) {
+    if (isFormValid) {        
+
+/*        nameInput.value = ""
+        emailInput.value = ""
+        turnoDia.value = ""
+        messageInput.value = ""*/
+
     }
 });
 

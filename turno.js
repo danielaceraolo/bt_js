@@ -6,7 +6,7 @@ export const listaTurnos = new ScheduleManager("lista1", new Date(), 5, 1, "14:0
 
 /* ------------------ CONST ------------------ */
 
-const form = document.getElementById('form')
+//const form = document.getElementById('form')
 const submit = document.getElementById('button')
 
 const name = document.getElementById("name");
@@ -20,10 +20,8 @@ const turnoDia = document.getElementById("turnoDia")
 
 //const fragment = document.createDocumentFragment()
 
-const empty = document.getElementById ("emptyOption")
 
-
-/* ------------------ ------------------ */
+/* ------------------------------------ */
 
 const chosen = {name: "", email: "", turnoDia: "", message: ""}
 
@@ -107,7 +105,7 @@ const takenTurn = (turnoDia, chosen) => {
     return takenTurn
 }
 
-function handleClick(e) {
+function handleClick(e){
     e.preventDefault()
     if (!takenTurn(myTurns, chosen)) {
 
@@ -119,7 +117,7 @@ function handleClick(e) {
             timer: 1500
         })
 
-        p.innerHTML = `<p>¡Has reservado con éxito tu turno!</p>`
+        //p.innerHTML = `<p>¡Has reservado con éxito tu turno!</p>`
         name.value = ""
         email.value = ""
         turnoDia.value = ""
@@ -134,9 +132,12 @@ function handleClick(e) {
 
 
 
-    } /*else {
+
+    } 
+    
+}/*else {
         muestra.innerHTML = 'No es posible ese día.'
     }*/
-}
+
 
 console.log(chosen)
