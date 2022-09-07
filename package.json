@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "luxon": "^3.0.3"
+  },
+  "name": "js_bt",
+  "version": "1.0.0",
+  "main": "turno.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

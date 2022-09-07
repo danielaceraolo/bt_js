@@ -1,8 +1,8 @@
-import {
+/*import {
     ScheduleManager
 } from './src/module/ScheduleManager.js'
 
-export const listaTurnos = new ScheduleManager("lista1", new Date(), 5, 1, "14:00", "17:00")
+export const listaTurnos = new ScheduleManager("lista1", new Date(), 5, 1, "14:00", "17:00")*/
 
 /* ------------------ CONST ------------------ */
 
@@ -23,7 +23,12 @@ const turnoDia = document.getElementById("turnoDia")
 
 /* ------------------------------------ */
 
-const chosen = {name: "", email: "", turnoDia: "", message: ""}
+const chosen = {
+    name: "",
+    email: "",
+    turnoDia: "",
+    message: ""
+}
 
 const myTurns = JSON.parse(localStorage.getItem('myTurns')) || []
 
@@ -34,6 +39,24 @@ message.addEventListener("input", handleInput)
 
 turnoDia.addEventListener('change', handleSelect)
 submit.addEventListener("click", handleClick)
+
+
+/* -------------- FETCH --------------------- */
+
+const daysJson = await fetch('./src/days.json')
+    .then((response) => response.json())
+    .then((data) => fillOptionDays(data));
+
+
+function fillOptionDays(data) {
+    console.log(data)
+
+    let optionDays = "";
+    data.days.forEach(element => optionDays += '<option value="' + element + '">' + element + "</option>");
+
+    turnoDia.innerHTML = optionDays;
+
+}
 
 
 
@@ -48,9 +71,6 @@ function handleSelect(e) {
     }
 }
 
-/*function handleClick(e){
-    e.preventDefault()
-}*/
 
 function handleInput(e) {
     const {
@@ -83,17 +103,6 @@ function verifyOption(e) {
     return chosenOption
 }
 
-/* ------------------ SELECCIONAR DÍA DEL TURNO ------------------ */
-
-/*for (const day of arrayDias) {
-    const selectDay = document.createElement('option')
-    selectDay.setAttribute('value', day)
-    selectDay.textContent = day
-    fragment.appendChild(selectDay)
-}
-
-turnoDia.appendChild(fragment)*/
-
 
 const takenTurn = (turnoDia, chosen) => {
 
@@ -105,7 +114,7 @@ const takenTurn = (turnoDia, chosen) => {
     return takenTurn
 }
 
-function handleClick(e){
+function handleClick(e) {
     e.preventDefault()
     if (!takenTurn(myTurns, chosen)) {
 
@@ -133,9 +142,10 @@ function handleClick(e){
 
 
 
-    } 
-    
-}/*else {
+    }
+
+}
+/*else {
         muestra.innerHTML = 'No es posible ese día.'
     }*/
 
