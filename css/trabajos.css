@@ -1,0 +1,316 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+/*---MOBILE FIRST---*/
+
+/*---NAVBAR MOBILE---*/
+
+.nav-item .nav-link {
+    display: inline;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10px;
+    letter-spacing: .2em;
+    display: flex;
+    align-items: center;
+}
+
+header .img-logo {
+    max-width: 0rem;
+}
+
+.subtituloh2 {
+    font-family: "Source Sans Pro ExtraBold", sans-serif;
+    color: white;
+    text-align: center;
+    letter-spacing: 5px;
+    font-size: 1.3rem;
+    display: flex;
+}
+
+/*---TITULO MOBILE---*/
+
+.titulo h1 {
+    font-family: "Bebas Neue", cursive;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    margin: 10px;
+    letter-spacing: 0.05em;
+}
+
+/*---IMG MOBILE---*/
+
+img{
+    max-width: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+input{
+    display: none;
+}
+
+    /*---FOOTER---*/
+
+    .footer{
+        display: flex;
+        justify-content: center;
+        margin: 50px;
+    }
+
+    .p-footer{
+        color:white;
+        font-family: "Bebas Neue", cursive;
+        letter-spacing: 5px;
+    }
+
+    .logo-instagram{
+        max-width: 25px;
+        margin: 5px;
+    }
+
+@media screen and (min-width: 768px) {
+
+    /*---NAVBAR TABLET---*/
+
+    .nav-item .nav-link {
+        display: inline;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 10px;
+        padding: 10px;
+        letter-spacing: .2em;
+    }
+
+    /*---TITULO---*/
+
+    .titulo h1 {
+        font-family: "Bebas Neue", cursive;
+        color: white;
+        font-size: 1px;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        letter-spacing: 0.05em;
+    }
+
+    img {
+        max-width: 100vh;
+        border-radius: 15px;
+    }
+
+    /*---SUBTITULO TRABAJOS---*/
+
+    .subtituloh2 {
+        font-family: "Source Sans Pro ExtraBold", sans-serif;
+        color: white;
+        text-align: center;
+        letter-spacing: 5px;
+        font-size: 1.3rem;
+    }
+
+        /*---FOOTER---*/
+
+        .footer{
+            display: flex;
+            justify-content: center;
+            margin: 50px;
+        }
+    
+        .p-footer{
+            color:white;
+            font-family: "Bebas Neue", cursive;
+            letter-spacing: 5px;
+        }
+    
+        .logo-instagram{
+            max-width: 25px;
+            margin: 5px;
+        }
+
+
+}
+
+@media (min-width: 992px) {
+
+    header .navbar {
+        font-family: "Source Sans Pro Semibold", cursive;
+        width: 100%;
+        text-align: center;
+        background-color: #191919;
+        display: flex;
+        justify-content: center;
+    }
+
+    header .nav-item .nav-link {
+        color: white;
+        display: block;
+        text-decoration: none;
+        font-size: 15px;
+        margin-left: 25px;
+        margin-right: 25px;
+        letter-spacing: .2em;
+    }
+
+    header .img-logo {
+        max-width: 1.5rem;
+    }
+
+    header .img-logo2 {
+        max-width: 2.5rem;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+
+    /*---HOVER---*/
+
+    nav.stroke ul li a {
+        position: relative;
+    }
+
+    nav.stroke ul li a:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: #aaa;
+        height: 1px;
+    }
+
+    nav.stroke ul li a:hover:after {
+        width: 100%;
+    }
+
+    /*---TITULO---*/
+
+    .titulo h1 {
+        font-family: "Bebas Neue", cursive;
+        color: white;
+        text-align: center;
+        padding-top: 3px;
+        font-size: 10rem;
+        letter-spacing: 4px;
+    }
+
+    .titulo h1:hover {
+        color: red;
+        transition: .8s;
+    }
+
+    /*---SUBTITULO TRABAJOS---*/
+
+    .subtituloh2 {
+        font-family: "Source Sans Pro ExtraBold", sans-serif;
+        color: white;
+        text-align: center;
+        letter-spacing: 5px;
+        font-size: 1.3rem;
+    }
+
+    /*---IMÁGENES---*/
+
+    .wrapped{
+        width: 100%;
+    }
+
+    .slide-image img{
+        width: 150%;
+        height: 100%;
+        object-fit: cover;
+        margin: auto;
+    }
+
+    .slides-container{
+        height: 500px;
+        position: relative;
+    }
+
+    .slide-image{
+        width: 100;
+        height: 100%;
+        position: absolute;
+    }
+
+    /*.next-btn,
+    .prev-btn{
+        background-color: grey;
+        padding: 16px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+        z-index: 100;
+        cursor: pointer;
+        transition: 400ms;
+    }
+
+    .next-btn:hover, .prev-btn:hover{
+        background-color: red;
+    }
+
+    .prev-btn{
+        left: 0;
+    }
+
+    .next-btn{
+        right: 0;
+    }*/
+
+    .navigation-dots{
+        display: flex;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        margin: 16px 0;
+    }
+
+    .single-dot{
+        background-color: darkgrey;
+        height: 16px;
+        width: 16px;
+        border: 2px solid black;
+        margin: 0 8px;
+        cursor: pointer;
+        transition: 400ms;
+        border-radius: 50%;
+    }
+
+    .single-dot.active{
+        background-color: lightgrey;
+    }
+
+    /*---FOOTER---*/
+
+    .footer {
+        display: flex;
+        justify-content: center;
+        margin: 50px;
+    }
+
+    .p-footer {
+        color: white;
+        font-family: "Bebas Neue", cursive;
+        letter-spacing: 5px;
+    }
+
+    .logo-instagram {
+        max-width: 25px;
+        margin: 5px;
+    }
+
+}

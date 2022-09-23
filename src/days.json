@@ -1,9 +1,11 @@
 {
     "days":[
+        "",
         "Lunes",
         "Martes",
         "Miércoles",
         "Jueves",
-        "Viernes"
+        "Viernes",
+        "Sábado"
     ]
 }

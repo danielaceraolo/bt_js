@@ -1,0 +1,423 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+}
+
+/*---MOBILE---*/
+
+/*---NAVBAR MOBILE---*/
+
+.nav-item .nav-link {
+    display: inline;
+    text-decoration: none;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10px;
+    letter-spacing: .2em;
+}
+
+header .img-logo {
+    max-width: 0rem;
+}
+
+
+/*---TITULO---*/
+
+.titulo h1 {
+    font-family: "Bebas Neue", cursive;
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    margin: 10px;
+    letter-spacing: 0.05em;
+}
+
+/*---CONTACT FORM---*/
+
+.contact-all {
+    width: 80%;
+    align-items: center;
+    height: auto;
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 0px #2f2f2f;
+    background: black;
+    font-family: "Bebas Neue", cursive;
+    color: white;
+    letter-spacing: 3px;
+    font-size: 2em;
+}
+
+input {
+    padding: 10px;
+    border-radius: 5px;
+    width: 280px;
+    border: 1px solid black;
+    font-size: 20px;
+    color: #333;
+}
+
+.form-control {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+textarea {
+    width: 250px;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px;
+    height: 50px;
+    font-size: 10px;
+}
+
+button {
+    color: red;
+    padding: 10px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    background: black;
+}
+
+/*---CONTACT IMG---*/
+
+.img-contact img{
+    max-width: 100%;
+    padding: 20px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+    /*---FOOTER---*/
+
+    .footer{
+        display: flex;
+        justify-content: center;
+        margin: 50px;
+    }
+
+    .p-footer{
+        color:white;
+        font-family: "Bebas Neue", cursive;
+        letter-spacing: 5px;
+    }
+
+    .logo-instagram{
+        max-width: 25px;
+        margin: 5px;
+    }
+
+
+
+/*---TABLET---*/
+
+@media screen and (min-width: 768px) {
+
+    /*---NAVBAR TABLET---*/
+
+    .nav-item .nav-link {
+        display: inline;
+        text-decoration: none;
+        font-size: 15px;
+        margin: 10px;
+        padding: 10px;
+        letter-spacing: .2em;
+    }
+
+    /*---TITULO---*/
+
+    .titulo h1 {
+        font-family: "Bebas Neue", cursive;
+        color: white;
+        font-size: 100px;
+        display: flex;
+        justify-content: center;
+        margin: 10px;
+        letter-spacing: 0.05em;
+    }
+
+    /*---CONTACT FORM---*/
+
+    .contact-all {
+        width: 80%;
+        align-items: center;
+        height: auto;
+        margin: auto;
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 0px #2f2f2f;
+        background: black;
+        font-family: "Bebas Neue", cursive;
+        color: white;
+        letter-spacing: 3px;
+        font-size: 2em;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        width: 280px;
+        border: 1px solid black;
+        font-size: 20px;
+        color: #333;
+    }
+
+    .form-control {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    textarea {
+        width: 250px;
+        border-radius: 5px;
+        outline: none;
+        padding: 5px;
+        height: 50px;
+        font-size: 10px;
+    }
+
+    button {
+        color: red;
+        padding: 10px;
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 10px;
+        background: black;
+    }
+
+    /*---CONTACT IMG---*/
+
+    .img-contact {
+        max-width: 100%;
+        margin: 5px;
+    }
+
+
+    /*---FOOTER---*/
+
+    .footer{
+        display: flex;
+        justify-content: center;
+        margin: 50px;
+    }
+
+    .p-footer{
+        color:white;
+        font-family: "Bebas Neue", cursive;
+        letter-spacing: 5px;
+    }
+
+    .logo-instagram{
+        max-width: 25px;
+        margin: 5px;
+    }
+
+
+
+}
+
+
+/*---DESKTOP---*/
+
+/*---NAVBAR DESKTOP---*/
+
+@media (min-width: 992px) {
+
+    header .navbar {
+        font-family: "Source Sans Pro Semibold", cursive;
+        width: 100%;
+        text-align: center;
+        background-color: #191919;
+        display: flex;
+        justify-content: center;
+    }
+
+    header .nav-item .nav-link {
+        color: white;
+        display: block;
+        text-decoration: none;
+        font-size: 15px;
+        margin-left: 25px;
+        margin-right: 25px;
+        letter-spacing: .2em;
+    }
+
+    header .img-logo {
+        max-width: 1.5rem;
+    }
+
+    header .img-logo2 {
+        max-width: 2.5rem;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+
+    /*---HOVER---*/
+
+    nav.stroke ul li a {
+        position: relative;
+    }
+
+    nav.stroke ul li a:after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 0%;
+        content: '.';
+        color: transparent;
+        background: #aaa;
+        height: 1px;
+    }
+
+    nav.stroke ul li a:hover:after {
+        width: 100%;
+    }
+
+    /*---TITULO---*/
+
+    .titulo h1 {
+        font-family: "Bebas Neue", cursive;
+        color: white;
+        text-align: center;
+        padding-top: 3px;
+        font-size: 10rem;
+        letter-spacing: 4px;
+    }
+
+    .titulo h1:hover {
+        color: red;
+        transition: .8s;
+    }
+
+    /*---CONTACT FORM---*/
+
+    .contact-all {
+        width: 70%;
+        align-items: center;
+        height: auto;
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px 0px #2f2f2f;
+        background: black;
+        font-family: "Bebas Neue", cursive;
+        color: white;
+        letter-spacing: .5px;
+        font-size: 2em;
+    }
+
+    input {
+        padding: 10px;
+        border-radius: 5px;
+        width: 250px;
+        border: 1px solid black;
+        font-size: 20px;
+        color: #333;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    .form-control {
+        font-size: 20px;
+        margin: 10px;
+        display: flex;
+    }
+
+    .p-reserva {
+        display: flex;
+        justify-content: center;
+    }
+
+    label {
+        padding: 10px;
+    }
+
+
+    textarea {
+        width: 250px;
+        border-radius: 5px;
+        outline: none;
+        padding: 5px;
+        height: 50px;
+        font-size: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    button {
+        margin-left: 10px;
+        padding: 5px;
+        display: flex;
+        text-align: center;
+        color: red;
+        background-color: black;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 10px;
+    }
+
+    .error{
+        color: red;
+        display: block;
+        font-size: 1rem;
+        padding: 5px
+    }
+
+    .invalid{
+        border: solid .5px red;
+        box-shadow: 0 0 5px red;
+    }
+
+
+
+    /*---IMG CONTACT---*/
+
+    .img-contact img{
+        max-width: 100%;
+        border-radius: 2px;
+        padding: 15px;
+        transition: 1s;
+        filter: grayscale();
+    }
+
+    .img-contact img {
+        transition: opacity .5s ease-in-out;
+
+    }
+
+    .img-contact img:hover {
+        filter: none;
+        opacity: 1;
+    }
+
+
+    /*---FOOTER---*/
+
+    .footer{
+        display: flex;
+        justify-content: center;
+        margin: 50px;
+    }
+
+    .p-footer{
+        color:white;
+        font-family: "Bebas Neue", cursive;
+        letter-spacing: 5px;
+    }
+
+    .logo-instagram{
+        max-width: 25px;
+        margin: 5px;
+    }
+
+}
